@@ -1,8 +1,12 @@
+// ignore_for_file: avoid_print
+
 import 'package:chatdall/feature_box.dart';
+import 'package:chatdall/openai_service.dart';
 import 'package:chatdall/pallete.dart';
 import 'package:flutter/material.dart';
 import 'package:speech_to_text/speech_recognition_result.dart';
 import 'package:speech_to_text/speech_to_text.dart';
+import 'package:flutter_tts/flutter_tts.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -13,12 +17,21 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final speechToText = SpeechToText();
+  final flutterTts = FlutterTts();
   String lastWords = '';
+  final OpenAIService openAIService = OpenAIService();
 
   @override
   void initState() {
     super.initState();
     initSpeechToText();
+    initTextToSpeech();
+  }
+
+  //For iOs only
+  Future<void> initTextToSpeech() async {
+    await flutterTts.setSharedInstance(true);
+    setState(() {});
   }
 
   Future<void> initSpeechToText() async {
@@ -42,10 +55,15 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
+  Future<void> systemSpeak(String content) async {
+    await flutterTts.speak(content);
+  }
+
   @override
   void dispose() {
     super.dispose();
     speechToText.stop();
+    flutterTts.stop();
   }
 
   @override
@@ -154,10 +172,13 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: Pallete.firstSuggestionBoxColor,
         onPressed: () async {
           if (await speechToText.hasPermission && speechToText.isNotListening) {
+            print('Starting to listen');
             await startListening();
           } else if (speechToText.isListening) {
-            await stopListening();
             print(lastWords);
+            final speech = await openAIService.isArtPromptAPI(lastWords);
+            await systemSpeak(speech);
+            await stopListening();
           } else {
             initSpeechToText();
           }
