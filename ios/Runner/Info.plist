@@ -48,8 +48,8 @@
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
 	<key>NSSpeechRecognitionUsageDescription</key>
-	<string>SpeechRecognition</string>
+	<string>Main</string>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>MicrophoneAccess</string>
+	<string>Main</string>
 </dict>
 </plist>

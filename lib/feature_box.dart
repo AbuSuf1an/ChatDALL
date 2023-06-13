@@ -18,7 +18,7 @@ class FeatureBox extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.symmetric(
         horizontal: 35,
-        vertical: 5,
+        vertical: 8,
       ),
       decoration: BoxDecoration(
         color: color,
