@@ -11,7 +11,7 @@
         </intent>
     </queries>
    <application
-        android:label="chatdall"
+        android:label="ChatDALL"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
