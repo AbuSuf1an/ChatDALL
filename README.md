@@ -1,16 +1,13 @@
-# chatdall
+I developed a Voice Assistant App using Flutter. 
 
-A new Flutter project.
+It uses two AI: ChatGPT and Dall-E (named the app 'ChatDALL' 🙃). 
 
-## Getting Started
+ChatGPT can talk to you and answer follow-up questions. 
 
-This project is a starting point for a Flutter application.
+Dall-E can create images and art from your words you tell it.
 
-A few resources to get you started if this is your first Flutter project:
+<img src="https://github.com/AbuSuf1an/ChatDALL/assets/68038121/04c8ed13-94ee-4780-abf0-c34475567b23" width="320" height="600" />
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+<img src="https://github.com/AbuSuf1an/ChatDALL/assets/68038121/c08722d5-740c-4edc-bc76-b114762e1def" width="320" height="600" />
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<img src="https://github.com/AbuSuf1an/ChatDALL/assets/68038121/aeadee79-ad58-48a6-aeca-6084f5fb95ae" width="320" height="550" />
