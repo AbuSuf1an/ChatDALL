@@ -1,6 +1,5 @@
 // ignore_for_file: avoid_print
 
-import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:chatdall/feature_box.dart';
 import 'package:chatdall/openai_service.dart';
 import 'package:chatdall/pallete.dart';
@@ -255,6 +254,8 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
+
+      //Mic Button
       floatingActionButton: ZoomIn(
         delay: Duration(milliseconds: start + 4 * delay),
         child: FloatingActionButton(
